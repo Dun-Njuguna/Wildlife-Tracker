@@ -1,3 +1,6 @@
+body{
+  background-color: whitesmoke;
+}
 .carousel-item {
     height: 70vh;
     min-height: 350px;
@@ -7,3 +10,27 @@
     -o-background-size: cover;
     background-size: cover;
   }
+
+.contain{
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  border-style: solid;
+  border-color: lawngreen;
+}
+.bear{
+  min-width: 200px;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.sides{
+  margin: 20px;
+}
+.footer{
+  min-height: 350px;
+  margin-top: 20px;
+}

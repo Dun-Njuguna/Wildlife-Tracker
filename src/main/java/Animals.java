@@ -49,7 +49,7 @@ public abstract class Animals{
   
     public void save() {
       try(Connection con = DB.sql2o.open()) {
-        String sql = "INSERT INTO Animals (name, rangerName, type, age) VALUES (:name, :rangerName, :type, :age)";
+        String sql = "INSERT INTO animals (name, rangerName, type, age) VALUES (:name, :rangerName, :type, :age)";
         this.id = (int) con.createQuery(sql, true)
           .addParameter("name", this.name)
           .addParameter("rangerName", this.rangerName)
@@ -59,6 +59,14 @@ public abstract class Animals{
           .getKey();
       }
     }
-    
+
+    public void delete() {
+      try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM animals WHERE id = :id;";
+      con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeUpdate();
+      }
+    }    
 
 }

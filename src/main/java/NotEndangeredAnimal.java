@@ -6,7 +6,6 @@ public class NotEndangeredAnimal extends Animals implements DatabaseManagement {
 
     private String location;
     private String health;
-    public Timestamp citingTime;
 
     public static final String ANIMAL_TYPE = "NotEndangeredAnimal";
 

@@ -62,4 +62,21 @@ public class NotEndangeredAnimalTest{
       assertEquals(NotEndangeredAnimal.find(secondNotEndangeredAnimal.getId()), secondNotEndangeredAnimal);
     }
 
+    @Test
+    public void save_recordsTimeOfCreationInDatabase() {
+      NotEndangeredAnimal firstNotEndangeredAnimal = new NotEndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+      firstNotEndangeredAnimal.save();
+      Timestamp savedNotEndangeredAnimalCitingtime = EndangeredAnimal.find(firstNotEndangeredAnimal.getId()).getCitingTime();
+      Timestamp rightNow = new Timestamp(new Date().getTime());
+      assertEquals(rightNow.getDay(), savedNotEndangeredAnimalCitingtime.getDay());
+    }
+
+    @Test
+    public void delete_deletesEndangeredAnimal_true() {
+      NotEndangeredAnimal firstNotEndangeredAnimal = new NotEndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+      firstNotEndangeredAnimal.save();
+      firstNotEndangeredAnimal.delete();
+      assertEquals(null, EndangeredAnimal.find(firstNotEndangeredAnimal.getId()));
+    }
+
 }

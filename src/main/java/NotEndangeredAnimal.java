@@ -30,7 +30,7 @@ public class NotEndangeredAnimal extends Animals implements DatabaseManagement {
     @Override
     public void save() {
       try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO animals (name, rangerName, type, age, location, health) VALUES (:name, :rangerName, :type, :age, :location, :health)";
+      String sql = "INSERT INTO animals (name, rangerName, type, age, location, health, citingtime) VALUES (:name, :rangerName, :type, :age, :location, :health, now())";
           this.id = (int) con.createQuery(sql, true)
           .addParameter("name", this.name)
           .addParameter("rangerName", this.rangerName)

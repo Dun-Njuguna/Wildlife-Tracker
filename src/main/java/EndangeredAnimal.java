@@ -1,4 +1,3 @@
-import java.sql.Timestamp;
 import org.sql2o.*;
 import java.util.List;
 
@@ -6,7 +5,7 @@ public class EndangeredAnimal extends Animals implements DatabaseManagement {
 
     private String location;
     private String health;
-    public Timestamp citingTime;
+
 
     public static final String ANIMAL_TYPE = "EndangeredAnimal";
 
@@ -30,7 +29,7 @@ public class EndangeredAnimal extends Animals implements DatabaseManagement {
     @Override
     public void save() {
       try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO animals (name, rangerName, type, age, location, health) VALUES (:name, :rangerName, :type, :age, :location, :health)";
+      String sql = "INSERT INTO animals (name, rangerName, type, age, location, health, citingTime) VALUES (:name, :rangerName, :type, :age, :location, :health, now())";
           this.id = (int) con.createQuery(sql, true)
           .addParameter("name", this.name)
           .addParameter("rangerName", this.rangerName)

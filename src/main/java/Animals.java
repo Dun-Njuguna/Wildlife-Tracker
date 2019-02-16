@@ -12,6 +12,7 @@ public abstract class Animals{
     public String rangerName;
     public String type;
     public String age;
+    public Timestamp citingTime;
     
     public String getName(){
       return name;
@@ -27,6 +28,9 @@ public abstract class Animals{
     }
     public String getAge(){
         return age;
+    }
+    public Timestamp getCitingTime(){
+      return citingTime;
     }
 
     @Override
@@ -55,5 +59,6 @@ public abstract class Animals{
           .getKey();
       }
     }
+    
 
 }

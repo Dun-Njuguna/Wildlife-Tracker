@@ -1,6 +1,5 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-import org.sql2o.*;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.text.DateFormat;
@@ -60,6 +59,23 @@ public class EndangeredAnimalTest{
       EndangeredAnimal secondEndangeredAnimal = new EndangeredAnimal("dunnn", "dunRanger", "young", "NE Quadrant", "healthy");
       secondEndangeredAnimal.save();
       assertEquals(EndangeredAnimal.find(secondEndangeredAnimal.getId()), secondEndangeredAnimal);
+    }
+
+    @Test
+    public void save_recordsTimeOfCreationInDatabase() {
+      EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+      firstEndangeredAnimal.save();
+      Timestamp savedEndangeredAnimalCitingtime = EndangeredAnimal.find(firstEndangeredAnimal.getId()).getCitingTime();
+      Timestamp rightNow = new Timestamp(new Date().getTime());
+      assertEquals(rightNow.getDay(), savedEndangeredAnimalCitingtime.getDay());
+    }
+
+    @Test
+    public void delete_deletesEndangeredAnimal_true() {
+      EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+      testEndangeredAnimal.save();
+      testEndangeredAnimal.delete();
+      assertEquals(null, EndangeredAnimal.find(testEndangeredAnimal.getId()));
     }
 
 }

@@ -21,5 +21,12 @@ public class NotEndangeredAnimalTest{
         assertEquals("dun", testNotEndangeredAnimal.getName());
     }
 
+    @Test
+    public void equals_returnsTrueIfNameRangerNameTypeAgeAndLocationAreSame_true() {
+        NotEndangeredAnimal testNotEndangeredAnimal = new NotEndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+        NotEndangeredAnimal testNotEndangeredAnimal2 = new NotEndangeredAnimal("dun", "dunRanger", "young", "NE Quadrant", "healthy");
+      assertTrue(testNotEndangeredAnimal.equals(testNotEndangeredAnimal2));
+    }
+
 
 }

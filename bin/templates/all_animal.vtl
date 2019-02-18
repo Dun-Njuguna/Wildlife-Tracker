@@ -1,0 +1,14 @@
+<h1>Not Endangered Animals</h1>
+<ul>
+  #foreach ($animal in $endangered)
+    <li>
+    <p>Name: <span>$animal.getName()</span></p>
+    <p>Ranger Name: <span> $animal.getRangerName()</span></p>
+    <p>Age: <span> $animal.getAge()</span> </p>
+    <p>Location: <span> $animal.getLocation()</span></p>
+    <p>Health: <span> $animal.getHealth()</span></p> 
+    <p>CitingTime: <span> $animal.getCitingTime()</span></p>
+    </li>
+    <hr>
+  #end
+</ul>

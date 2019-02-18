@@ -15,6 +15,19 @@ public class App {
             model.put("template", "templates/index.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        get("/endangered", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/endangered_form.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("/other", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/notendangered_form.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
     }
 }
     

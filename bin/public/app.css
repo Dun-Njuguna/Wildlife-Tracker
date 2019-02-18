@@ -13,10 +13,8 @@ body{
 
 .contain{
   margin-top: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
-  border-style: solid;
-  border-color: lawngreen;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .bear{
   min-width: 200px;
@@ -34,4 +32,21 @@ body{
 .footer{
   min-height: 350px;
   margin-top: 20px;
+}
+.sideTop{
+  height: 60%;
+  width: 100%;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.sideBottom{
+  height: 30%;
+  width: 100%;
+  margin-top: 20px;
+}
+.form{
+  width: 50%;
 }

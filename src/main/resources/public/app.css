@@ -29,6 +29,7 @@ body{
 }
 .sides{
   margin: 20px;
+  margin-top: 40px;
 }
 .footer{
   min-height: 350px;

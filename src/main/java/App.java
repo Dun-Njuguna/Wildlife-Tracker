@@ -64,6 +64,7 @@ public class App {
 
         get("/allAnimals", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            model.put("notendangered", NotEndangeredAnimal.all());
             model.put("template", "templates/all_animal.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());

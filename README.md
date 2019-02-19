@@ -9,7 +9,7 @@ To create an application that allows rangers to add citings of animals and descr
 ----------------------------------------------------------------------
 
 ## Technologies used
-This project has been written using java,spark framework,Postgres SQL - Database, css and html.
+This project has been written using java,spark framework,Postgres SQL - Database, css, jquery and html.
 
 
 -----------------------------------------------------------------------------

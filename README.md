@@ -19,7 +19,9 @@ This project has been written using java,spark framework,Postgres SQL - Database
 |---------------|-------------------|
 
 |User adds an endangered animal       |Endangered animal is added |
-|User adds an unendangered animal        | Unendangered animal is added  |
+
+|User adds an unendangered animal     | Unendangered animal is added  |
+
 |User reports an animal sighting      | Animal sighting is reported  |
 
 ---------------------------------------------------------------------------------
